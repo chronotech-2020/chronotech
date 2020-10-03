@@ -24,6 +24,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth:web'])
     ->namespace('App\Http\Controllers')
     ->group(function () {
-        Route::resource('personal-records',  PersonalRecordController::class);
-        Route::resource('medical-records',  MedicalRecordController::class);
+        Route::resource('users', UserController::class);
+        Route::resource('exercises',  ExercisesController::class);
     });
