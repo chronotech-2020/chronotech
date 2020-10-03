@@ -16,8 +16,8 @@ class CreateExercisesTable extends Migration
         Schema::create('exercises', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
-            $table->decimal('calories_required_before_workout');
-            $table->decimal('calories_required_after_workout');
+            $table->integer('calories_required_before_workout');
+            $table->integer('calories_required_after_workout');
             $table->string('exercise_start_time');
             $table->string('exercise_end_time');
             $table->json('hours')->nullable();

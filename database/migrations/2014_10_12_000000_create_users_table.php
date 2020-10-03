@@ -23,7 +23,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('nickname')->nullable();
             $table->string('birthday');
-            $table->decimal('bmi');
+            $table->integer('height');
+            $table->integer('weight');
+            $table->integer('bmi');
+            $table->string('diet');
             $table->string('time_for_caffeine_intake')->nullable();
             $table->string('chronotype');
 

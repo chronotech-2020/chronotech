@@ -1,0 +1,13 @@
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+
+  .tab{
+    margin-bottom: 15px;
+  }
+  
+  /* Hide all steps by default: */
+  /* .tab {
+    display: none;
+  } */

@@ -25,6 +25,9 @@ class User extends Authenticatable
         'nickname',
         'birthday',
         'bmi',
+        'weight',
+        'height',
+        'diet',
         'time_for_caffeine_intake',
         'chronotype'
     ];
