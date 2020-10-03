@@ -20,6 +20,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'nickname',
+        'birthday',
+        'bmi',
+        'time_for_caffeine_intake',
+        'chronotype'
     ];
 
     /**
