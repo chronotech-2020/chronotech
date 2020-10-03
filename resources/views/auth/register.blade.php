@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="nickname" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                            <label for="nickname" class="col-md-4 col-form-label text-md-right">Nickname</label>
 
                             <div class="col-md-6">
                                 <input id="nickname" type="text" class="form-control @error('nickname') is-invalid @enderror" name="nickname" value="{{ old('nickname') }}" required autocomplete="nickname" autofocus>
@@ -119,25 +119,37 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-primary float-right next-btn">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
 
                 <div class="card tab">
                     <div class="card-header">Step 2 - Determining Chronotype</div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <input id="chronotype" type="radio" name="chronotype" value="Lion"> 
-                            <label class="col-form-label text-md-right">Lion</label>
-                            <br>
-                            <input id="chronotype" type="radio" name="chronotype" value="Bear">
-                            <label class="col-form-label text-md-right">Bear</label>
-                            <br>
-                            <input id="chronotype" type="radio" name="chronotype" value="Wolf">
-                            <label class="col-form-label text-md-right">Wolf</label>
-                            <br>
-                            <input id="chronotype" type="radio" name="chronotype" value="Dolphin">
-                            <label class="col-form-label text-md-right">Dolphin</label>
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input id="chronotype" type="radio" name="chronotype" value="Lion"> 
+                                <label class="col-form-label text-md-right">Lion</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="chronotype" type="radio" name="chronotype" value="Bear">
+                                <label class="col-form-label text-md-right">Bear</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="chronotype" type="radio" name="chronotype" value="Wolf">
+                                <label class="col-form-label text-md-right">Wolf</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="chronotype" type="radio" name="chronotype" value="Dolphin">
+                                <label class="col-form-label text-md-right">Dolphin</label>
+                            </div>
 
                             @error('chronotype')
                                 <span class="invalid-feedback" role="alert">
@@ -148,22 +160,32 @@
 
                         <a href="#">Know your Chronotype</a>
 
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-primary float-right next-btn">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card tab">
                     <div class="card-header">Step 3 - Nutrition</div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <input id="diet" type="radio" name="diet" value="Normal Diet"> 
-                            <label class="col-form-label text-md-right">Normal Diet</label>
-                            <br>
-                            <input id="diet" type="radio" name="diet" value="Vegetarian">
-                            <label class="col-form-label text-md-right">Vegetarian</label>
-                            <br>
-                            <input id="diet" type="radio" name="diet" value="Pescatarian">
-                            <label class="col-form-label text-md-right">Pescatarian</label>
-
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input id="diet" type="radio" name="diet" value="Normal Diet"> 
+                                <label class="col-form-label text-md-right">Normal Diet</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="diet" type="radio" name="diet" value="Vegetarian">
+                                <label class="col-form-label text-md-right">Vegetarian</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="diet" type="radio" name="diet" value="Pescatarian">
+                                <label class="col-form-label text-md-right">Pescatarian</label>
+                            </div>
                             @error('diet')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -171,6 +193,13 @@
                             @enderror
                         </div>
 
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-primary float-right next-btn">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -178,11 +207,9 @@
                     <div class="card-header">Step 4 - Fitness</div>
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="weight" class="col-md-4 col-form-label text-md-right">Weight</label>
-
+                            <label for="weight" class="col-md-4 col-form-label text-md-right">Weight (in kilograms)</label>
                             <div class="col-md-6">
-                                <input id="weight" type="number" class="form-control @error('weight') is-invalid @enderror" name="weight" value="{{ old('weight') }}" required autocomplete="weight" autofocus>
-
+                                <input id="weight" type="text" class="form-control @error('weight') is-invalid @enderror" name="weight" value="{{ old('weight') }}" required autocomplete="weight" autofocus>
                                 @error('weight')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -192,11 +219,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="height" class="col-md-4 col-form-label text-md-right">Height</label>
-
+                            <label for="height" class="col-md-4 col-form-label text-md-right">Height (in centimeters)</label>
                             <div class="col-md-6">
-                                <input id="height" type="number" class="form-control @error('height') is-invalid @enderror" name="height" value="{{ old('height') }}" required autocomplete="height" autofocus>
-
+                                <input id="height" type="text" class="form-control @error('height') is-invalid @enderror" name="height" value="{{ old('height') }}" required autocomplete="height" autofocus>
                                 @error('height')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -205,7 +230,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row m-3 mb-2 float-right">
+                        <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary float-right next-btn">
                                     {{ __('Register') }}

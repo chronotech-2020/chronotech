@@ -2,12 +2,8 @@
   input.invalid {
     background-color: #ffdddd;
   }
-
-  .tab{
-    margin-bottom: 15px;
-  }
   
   /* Hide all steps by default: */
-  /* .tab {
+  .tab {
     display: none;
-  } */
+  }
