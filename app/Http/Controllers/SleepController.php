@@ -20,9 +20,9 @@ class SleepController extends Controller
     public function index()
     {
         $temperatureReadingForTheDay = Temperature::where('user_id', Auth::user()->id)->pluck('temperature')->toArray();
-        $recentFlightRecord = Flight::latest()->first();
-        $caffeineIntakeForTheDay = CaffeineIntake::orderBy('created_at', 'DESC')->get();
-        $sleepTimeForTheDay = Sleep::latest('created_at')->first();
+        $recentFlightRecord = Flight::where('user_id', Auth::user()->id)->latest()->first();
+        $caffeineIntakeForTheDay = CaffeineIntake::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->get();
+        $sleepTimeForTheDay = Sleep::where('user_id', Auth::user()->id)->latest('created_at')->first();
 
         return view('sleep.index', compact('temperatureReadingForTheDay', 'recentFlightRecord', 'caffeineIntakeForTheDay', 'sleepTimeForTheDay'));
     }

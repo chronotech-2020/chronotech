@@ -13,12 +13,48 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
+                    @php
+                        //TODO: Make this more dynamic!
+                        $lionWake = [5, 6];
+                        $lionSleep = 22;
+                        $bearWake = 7;
+                        $bearSleep = 23;
+                        $wolfWake = [7,8];
+                        $wolfSleep = 0;
+                        $lionCoffee = [8,9,10];
+                        $lionCoffeeAfternoon = [14,15,16];
+                        $bearCoffee = [10,11,14,15];
+                        $wolfCoffee = [12,13,14];
+
+                        if (isset($sleepTimeForTheDay)){
+                            $sleepHour = date('h', strtotime($sleepTimeForTheDay->sleep_time));
+                            $wakeHour = date('h', strtotime($sleepTimeForTheDay->wake_time));
+                        }
+                    @endphp
+                    
+                    @if (isset($sleepHour) && isset($wakeHour))
+                        @if (auth()->user()->chronotype == 'Lion' && !($sleepHour == $lionSleep && $wakeHour <= reset($lionWake) && $wakeHour >= end($lionWake)))
+                            <div class="alert alert-warning" role="alert">
+                                You haven't been sleeping according to your chronotype. People with the Lion chronotype often sleep on 10PM until 5AM - 6AM.
+                            </div>
+                        @elseif (auth()->user()->chronotype == 'Bear' && $sleepHour != $bearSleep && $wakeHour != $bearSleep)
+                            <div class="alert alert-warning" role="alert">
+                                You haven't been sleeping according to your chronotype. People with the Bear chronotype often sleep on 11PM until 7PM.
+                            </div>
+                        @elseif (auth()->user()->chronotype == 'Wolf' && !($sleepHour == $wolfSleep && $wakeHour <= reset($wolfWake) && $wakeHour >= end($wolfWake)))
+                            <div class="alert alert-warning" role="alert">
+                                You haven't been sleeping according to your chronotype. People with the Wolf chronotype often sleep on 12AM until 7AM - 8AM.
+                            </div>
+                        @endif
+                    @endif
+
                     <canvas id="temperatureChart" class="p-3"></canvas>
                     <div class="m-3">
                         <div class="float-center">
                             <div class="pl-5 pr-5 text-center">
-                                <p> Recent Sleep Time: {{ date('h:i:s A', strtotime($sleepTimeForTheDay->sleep_time)) ?? 'N/A' }} </p>
-                                <p> Recent Wake Time: {{ date('h:i:s A', strtotime($sleepTimeForTheDay->wake_time)) ?? 'N/A' }} </p>
+                                <p> Recent Sleep Time: {{ isset($sleepTimeForTheDay->sleep_time) ? date('h:i:s A', strtotime($sleepTimeForTheDay->sleep_time)) : 'N/A' }} </p>
+                                <p> Recent Wake Time: {{ isset($sleepTimeForTheDay->wake_time) ? date('h:i:s A', strtotime($sleepTimeForTheDay->wake_time)) : 'N/A' }} </p>
                                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#sleepAndWakeUpTimeModal">Update Sleep and Wake Time</button>
                             </div>
                         </div>
@@ -67,9 +103,7 @@
 
 <script>
 var data = @json($temperatureReadingForTheDay);
-
 var ctx = document.getElementById('temperatureChart').getContext('2d');
-
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
@@ -78,7 +112,7 @@ var chart = new Chart(ctx, {
     data: {
         labels: ['0','1', '2', '3', '4', '5', '6', '7','8', '9', '10', '11', '12', '13', '14','15', '16', '17', '18', '19','20', '21', '22', '23'],
         datasets: [{
-            label: 'Temperature Reading for Today',
+            label: 'Temperature',
             backgroundColor: 'rgba(0, 0, 0, 0)',
             borderColor: 'rgb(255, 99, 132)',
             data: data,
