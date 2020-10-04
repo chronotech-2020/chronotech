@@ -27,7 +27,6 @@ class CreateUsersTable extends Migration
             $table->decimal('weight');
             $table->decimal('bmi');
             $table->string('diet');
-            $table->string('time_for_caffeine_intake')->nullable();
             $table->string('chronotype');
 
             $table->rememberToken();

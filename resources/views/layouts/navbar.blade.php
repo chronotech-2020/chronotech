@@ -1,21 +1,20 @@
 <ul class="navbar-nav mr-auto">
     @guest
-        <a href="{{ route('login') }}">Login</a>
-        <a href="{{ route('register') }}">Register</a>
+        
     @else
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('sleep.index') }}">
                 <span class="site-menu-title">Sleep</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <span class="site-menu-title">Exercise</span>
+                <span class="site-menu-title">Eat</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <span class="site-menu-title">Eating</span>
+                <span class="site-menu-title">Run</span>
             </a>
         </li>
     @endguest

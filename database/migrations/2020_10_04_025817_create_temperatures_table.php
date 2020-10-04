@@ -17,7 +17,7 @@ class CreateTemperaturesTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->integer('hour');
-
+            $table->decimal('temperature');
             $table->foreign('user_id')->references('id')->on('users');
             
             $table->timestamps();

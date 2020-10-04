@@ -26,4 +26,7 @@ Route::middleware(['auth:web'])
     ->group(function () {
         Route::resource('users', UserController::class);
         Route::resource('exercises',  ExercisesController::class);
+        Route::resource('flights', FlightController::class);
+        Route::resource('caffeine-intake', CaffeineIntakeController::class);
+        Route::resource('sleep', SleepController::class);
     });
