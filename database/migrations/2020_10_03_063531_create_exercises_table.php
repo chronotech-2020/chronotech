@@ -25,6 +25,9 @@ class CreateExercisesTable extends Migration
             $table->string('period');
             $table->string('type');
             $table->integer('length');
+
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }

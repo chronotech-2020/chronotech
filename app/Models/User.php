@@ -19,16 +19,15 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'password',
         'age',
         'sex',
-        'password',
         'nickname',
         'birthday',
         'bmi',
         'weight',
         'height',
         'diet',
-        'time_for_caffeine_intake',
         'chronotype'
     ];
 
@@ -50,4 +49,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function exercises(){
+        $this->hasMany('App\Models\Exercise', 'user_id', 'id');
+    }
 }

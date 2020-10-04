@@ -19,11 +19,17 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Styles -->
+    <!-- Custom Styles -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
-    <!-- Scripts -->
+    <!-- Custom Scripts -->
     <script src="{{ asset('js/custom.js') }}" defer></script>
+
+    <!-- Chart.js -->
+    <script src="{{ asset('js/Chart.min.js') }}"></script>
+    <script src="{{ asset('js/Chart.bundle.min.js') }}"></script>
+
+    <link href="{{ asset('css/Chart.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -38,10 +44,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
+                    @include('layouts.navbar')
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -61,6 +65,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        Your Profile
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
