@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Flight;
-
+use Auth;
 class FlightController extends Controller
 {
     /**
@@ -35,18 +35,18 @@ class FlightController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'flight_start_time' => 'required',
+            'flight_end_time' => 'required',
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        Flight::create([
+            'user_id'  => Auth::user()->id,
+            'flight_start_time' => $request->flight_start_time,
+            'flight_end_time' => $request->flight_end_time
+        ]);
+
+        return redirect()->route('sleep.index');
     }
 
     /**

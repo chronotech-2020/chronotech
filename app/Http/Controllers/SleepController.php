@@ -23,17 +23,8 @@ class SleepController extends Controller
         $recentFlightRecord = Flight::latest()->first();
         $caffeineIntakeForTheDay = CaffeineIntake::orderBy('created_at', 'DESC')->get();
         $sleepTimeForTheDay = Sleep::latest('created_at')->first();
-        return view('sleep.index', compact('temperatureReadingForTheDay', 'recentFlightRecord', 'caffeineIntakeForTheDay', 'sleepTimeForTheDay'));
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('sleep.index', compact('temperatureReadingForTheDay', 'recentFlightRecord', 'caffeineIntakeForTheDay', 'sleepTimeForTheDay'));
     }
 
     /**
@@ -44,7 +35,18 @@ class SleepController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'sleep_time' => 'required',
+            'wake_time' => 'required',
+        ]);
+
+        Sleep::create([
+            'user_id'  => Auth::user()->id,
+            'sleep_time' => $request->sleep_time,
+            'wake_time' => $request->wake_time
+        ]);
+
+        return redirect()->route('sleep.index');
     }
 
     /**

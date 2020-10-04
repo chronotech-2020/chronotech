@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CaffeineIntake;
+
+use Auth;
 
 class CaffeineIntakeController extends Controller
 {
@@ -34,7 +37,18 @@ class CaffeineIntakeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'time_start' => 'required',
+            'time_end' => 'required',
+        ]);
+
+        CaffeineIntake::create([
+            'user_id' => Auth::user()->id,
+            'time_start' => $request->time_start,
+            'time_end' => $request->time_end
+        ]);
+
+        return redirect()->route('sleep.index');
     }
 
     /**
