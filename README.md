@@ -1,61 +1,59 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Chronotech
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Summary
+ChronoTech is a sleep-shifting technology that anchors its wearer to wake and sleep cycles based on their chronotype putting them at an optimal state for bio productivity, and puts them at a lesser risk for social and travel jetlag. ChronoTech inspires proper nutrition and exercise by ensuring the achievement of optimum utilization of their body clock to their benefit. The technology stack includes a web application that performs and records analysis of wake and sleep patterns up to real-time data retrieval of biomarkers via health API’s in wearable technologies. ChronoTech envisions to unveil the full potential of human productivity.
+How We Addressed This Challenge
 
-## About Laravel
+Team ChronoTech addresses the challenge by utilizing the body’s chronobiology into identifying sleep periods, and to project strategic scheduling of activities to avoid circadian desynchronization and its adverse effects.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+By using multiple biomarkers, ChronoTech Software will collect real-time data to predict its activity inside the body system. The best method of measuring the circadian rhythm includes monitoring the core body temperature and salivary/plasma melatonin levels. A rating scale, morningness-eveningness questionnaire (MEQ), can also be utilized to assess the circadian pattern. A noninvasive, but less common monitoring technique, actimetry, examines a person’s activity/rest cycle. Other long-term studies include the use of polysomnography and EEGs. ChronoTech gathers, calculates, analyzes, and treats data for hormones such as but not limited to insulin, melatonin, cortisol, and testosterone. Body functions such as metabolism, fluctuation of core, wrist, and skin temperature are also used in circadian-related studies NASA ground control studies use cortisol and melatonin when it comes to circadian-related experiments.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+When it comes to sleep, melatonin, the sleep hormone, is the best biomarker to predict the sleep-cycle, wherein rise of melatonin levels signifies sleep and its fall to cause waking up. NASA astronauts use melatonin-based drugs to induce tiredness to minimize the possibility of circadian desynchronization. Unfortunately, NASA data research 9301104 showed no sleep improvement when sleep was administered with 0.3 mg melatonin. Intense light exposure is seen as the suspect to fatigue, jetlag, and reduced productivity.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Jetlag is the adverse effect of sleep desynchronization ChronoTech aims to eliminate. Whether it’s social or travel jet lag, the drawbacks range from behavior to decreased productivity. Countermeasures such as drugs, and specialized materials are not highlighted due to feasibility and limited data access. Instead, Team ChronoTech focused on developing an application that specializes on strategic planning of activities based on chronobiology. 
 
-## Learning Laravel
+Timing is the heart of ChronoTech Software. Real-time data will be gathered and stored for predictability and machine learning. The successful implementation of a scheduling application will reduce the need for drug administered sleep. Timing of diet and exercise give significant impact in improving sleep quality as shown in NASA archives
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+For feasibility purposes, ChronoTech made use of wrist temperature circadian rhythm and based the timing of activities from Dr. Michael Breus’ The Power of When. Dr. Breus’ chronotypes are heavily laid in multiple research studies. Activities are strategically scheduled on a 24-hr period based on serotonin, melatonin, cortisol, and core temperature levels. With this given, even with the lack of variables, the prototypes are still laid heavily on biomarkers showing circadian rhythm.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+With a sufficient amount of support in ChronoTech software, it is possible to incorporate the software into hardware to easily gather real-time data. Layman may use devices such as smartwatches, actimetry devices, and microchips. NASA ground control may develop non-invasive skin adhesive devices that could measure insulin at real-time and microchips. It is also possible to incorporate the software to ongoing nanochip devices that circulate along the bloodstream.
 
-## Laravel Sponsors
+ChronoTech envisions to unveil the full potential of human productivity by the complete utilization of endocrine activity by handy monitoring and strategic automated planning. The goal is not a global impact, ChronoTech pushes for universal. A software designed for humans on earth and above.
+How We Developed This Project
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+The web application is created with Laravel PHP framework, CSS3, HTML5 and Javascript. The application will also integrate HealthKit (for iOS) and the Google Fit (for Android) data via the REST API for real-time, automated analysis.
+How We Used Space Agency Data in This Project
 
-### Premium Partners
+Data in NASA Human Research Roadmap risks and tasks, and Life Science Data Archive in regards to circadian rhythm and sleep were used to conceptualize the ChronoTech Software. NASA open data in circadian rhythm correlations to sleep, nutrition, and exercise were used as framework for the scientific basis of the software and its contents.
+Project Demo
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+https://yungajapan.org/addtl/chronotech.pdf
 
-## Contributing
+## Data & Resources
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+https://humanresearchroadmap.nasa.gov/Gaps/gap.aspx?i=737
 
-## Code of Conduct
+https://humanresearchroadmap.nasa.gov/Tasks/task.aspx?i=1649
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Experiment - 15-IML-1
 
-## Security Vulnerabilities
+https://lsda.jsc.nasa.gov/Experiment/exper/2119
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+https://lsda.jsc.nasa.gov/Experiment/exper/465
 
-## License
+https://www.nasa.gov/mission_pages/station/research/astronauts_improve_sleep
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+https://www.nasa.gov/feature/ames/nasa-research-reveals-biological-clock-misalignment-effects-on-sleep-for-astronauts/
+
+https://lsda.jsc.nasa.gov/Experiment/exper/13773
+
+Reddy S, Reddy V, Sharma S. Physiology, Circadian Rhythm. [Updated 2020 Jul 10]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2020 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK519507/
+
+Breus, M. (n.d.). The Power of When Discover Your Chronotype--and the Best Time to Eat Lunch, Ask for a Raise, Have Sex, Write a Novel, Take Your Meds, and More. Little, Brown and Company.
+
+http://dx.doi.org/10.3109/07420528.2016.1168829
+
+https://www.sciencedirect.com/science/article/abs/pii/S0031938408002576
+
+## Tags
+#chronotype, #sleepshifting, #nutrition, #sleep, #exercise, #circadianrhythm, #software
