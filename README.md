@@ -1,4 +1,4 @@
-Chronotech
+## Chronotech
 
 ## Summary
 ChronoTech is a sleep-shifting technology that anchors its wearer to wake and sleep cycles based on their chronotype putting them at an optimal state for bio productivity, and puts them at a lesser risk for social and travel jetlag. ChronoTech inspires proper nutrition and exercise by ensuring the achievement of optimum utilization of their body clock to their benefit. The technology stack includes a web application that performs and records analysis of wake and sleep patterns up to real-time data retrieval of biomarkers via health API’s in wearable technologies. ChronoTech envisions to unveil the full potential of human productivity.
